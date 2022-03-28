@@ -1,0 +1,21 @@
+
+% VARIABLES
+g = 9.8;
+p_air
+p_particle
+
+% Distance from the place
+distance
+% Stokes constant
+c_d
+% 
+v_vert
+
+
+charge
+charge_density = 0
+
+k = 0
+k_0 = 8.85e-12
+
+vert_
