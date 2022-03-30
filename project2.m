@@ -1,3 +1,8 @@
+syms y(t)
+Dy = diff(y);
+
+
+
 
 % VARIABLES
 g = 9.8;
@@ -30,11 +35,11 @@ charge = [c_electron, 0, -2 * c_electron, 0, 0, c_electron, -c_electron];
 i = 1;
 
 % Reynolds Number
-Re = (p_air * diameter(i) * y') / u_air;
+Re = (p_air * diameter(i) * diff(y, t)) / u_air;
 % Stokes constant
 c_d = 24 / Re;
 % 
-v_vert = y';
+v_vert = diff(y, t);
 
 
 
@@ -54,18 +59,29 @@ charge_density = 10;
 h = 10;
 
 % Mass * Acceleration
-m_a = (pi/6) * p_particle(i) * pow(diameter(i), 3) * y'';
+m_a = (pi/6) * p_particle(i) * pow(diameter(i), 3) * diff(y, t, 2);
 
 % Force of gravity
 f_g = (pi/6) * (p_air - p_particle(i)) * g * pow(diameter(i), 3);
 
 % Force of drag
-f_d = 0.5 * p_air * c_d * (pi / 4) * pow(diameter(i), 2) * pow(y', 2);
+f_d = 0.5 * p_air * c_d * (pi / 4) * pow(diameter(i), 2) * pow(diff(y, t), 2);
 
 % Force of the sheet
-f_sheet = charge(i) * charge_density * k;
+f_sheet = charge(i) * charge_density * 2 * k;
 
 % Force of charged particles
 f_charge_particles = ((pow(charge(i), 2) * c_t) / (2 * k_0)) * ((2 * y) - h);
 
 
+
+
+ode = m_a == f_g + f_d - f_sheet + f_charge_particles;
+cond1 = y(0) == 0;
+cond2 = Dy == 0;
+
+conds = [cond1, cond2];
+ySol(x) = dsolve(ode, conds);
+ySol = simplify(ySol);
+
+disp(ySol)
