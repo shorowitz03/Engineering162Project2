@@ -1,0 +1,30 @@
+% VARIABLES
+g = 9.8;
+% Density of air (kg/m^3)
+p_air = 1.23;
+% Dynamic Viscosiry of air
+u_air = 1.8205;
+% Charge of one electron (C)
+c_electron = 1.602176634e-19;
+% Permativity of free space 
+k_0 = 8.85e-12;
+
+% Columb Constant (Nm^2C^2)
+k = 1/(4 * pi * k_0);
+i = 1;
+charge = [c_electron, 0, -2 * c_electron, 0, 0, c_electron, -c_electron];
+charge_density = 10;
+f_sheet = charge(i) * charge_density * 2 * k;
+p_particle = [3.663, 2.629, 1.3402, 1.14, 3.486, 1780, 1780];
+
+% Diamater of particle (m)
+diameter = [3.94e-10, 4.4e-10, 2.62e-10, 2.7e-10, 6.76e-10, 2.5e-6, 1e-7];
+
+divisor = (pi/6) * p_particle(i) * power(diameter(i), 3);
+timestep = .0001;
+y0 = [0.0;3.0];
+t_span = [0.0 10.0];
+[t,y] = ode45(@(t,y) ode_func(t, y, timestep, f_sheet, divisor), t_span, y0);
+
+plot(t,y)
+legend('Position','Velocity')
