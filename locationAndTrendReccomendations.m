@@ -260,11 +260,52 @@ fprintf("Central:");
 disp(CentralList)
 fprintf("Mong Kok:");
 disp(MongKokList)
-arrayTotal = [TaiPoList,MongKokList];
-writematrix(arrayTotal)
 
+array2table(CentralWesternList)
+fprintf("Eastern:");
+array2table(EasternList)
+fprintf("Kwun Tong:");
+array2table(KwunTongList)
+fprintf("Sham Shui Po:");
+array2table(ShamShuiPoList)
+fprintf("Kwai Chung:");
+array2table(KwaiChungList)
+fprintf("Tseun Wan:");
+array2table(TsuenWanList)
+fprintf("Yuen Long:");
+array2table(YuenLongList)
+fprintf("Tuen Mun:");
+array2table(TuenMunList)
+fprintf("Tung Chung:");
+array2table(TungChungList)
+fprintf("Tai Po:");
+array2table(TaiPoList)
+fprintf("Sha Tin North:");
+array2table(ShaTinNorthList)
+fprintf("Tap Mun:");
+array2table(TapMunList)
+fprintf("Causeway Bay:");
+array2table(CausewayBayList)
+fprintf("Central:");
+array2table(CentralList)
+fprintf("Mong Kok:");
+array2table(MongKokList)
 
-
+fprintf("Central Western Average: %f\n", mean(CentralWesternList))
+fprintf("Easter Average: %f\n", mean(EasternList))
+fprintf("Kwun Tong Average: %f\n", mean(KwunTongList))
+fprintf("Sham Shui Po Average: %f\n", mean(ShamShuiPoList))
+fprintf("Kwai Chung Average: %f\n", mean(KwaiChungList))
+fprintf("Tseun Wan Average: %f\n", mean(TsuenWanList))
+fprintf("Yuen Long Average: %f\n", mean(YuenLongList))
+fprintf("Tuen Mun Average: %f\n", mean(TuenMunList))
+fprintf("Tung Chung Average: %f\n", mean(TungChungList))
+fprintf("Tai Po Average: %f\n", mean(TaiPoList))
+fprintf("Sha Tin North Average: %f\n", mean(ShaTinNorthList))
+fprintf("Tap Mun Average: %f\n", mean(TapMunList, 'omitnan'))
+fprintf("Causeway Bay Average: %f\n", mean(CausewayBayList))
+fprintf("CentralAverage: %f\n", mean(CentralList))
+fprintf("Mong Kok Bay Average: %f\n", mean(MongKokList))
 
 plot(yearS,CentralWesternList)
 title('Central Western Air Quality')
