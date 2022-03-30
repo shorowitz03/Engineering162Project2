@@ -229,24 +229,141 @@ MongKokList(8) = mean(year2021(:,MongKok), 'omitnan');
 MongKokList(9) = mean(year2022(:,MongKok), 'omitnan');
 
 % RESULTS
-
+fprintf("          2014     2015     2016     2017     2018     2019     2020     2021     2022\n")
+fprintf("Central Western:");
 disp(CentralWesternList)
+fprintf("Eastern:");
 disp(EasternList)
+fprintf("Kwun Tong:");
 disp(KwunTongList)
+fprintf("Sham Shui Po:");
 disp(ShamShuiPoList)
+fprintf("Kwai Chung:");
 disp(KwaiChungList)
+fprintf("Tseun Wan:");
 disp(TsuenWanList)
+fprintf("Yuen Long:");
 disp(YuenLongList)
+fprintf("Tuen Mun:");
 disp(TuenMunList)
+fprintf("Tung Chung:");
 disp(TungChungList)
+fprintf("Tai Po:");
 disp(TaiPoList)
+fprintf("Sha Tin North:");
 disp(ShaTinNorthList)
+fprintf("Tap Mun:");
 disp(TapMunList)
+fprintf("Causeway Bay:");
 disp(CausewayBayList)
+fprintf("Central:");
 disp(CentralList)
+fprintf("Mong Kok:");
 disp(MongKokList)
+arrayTotal = [TaiPoList,MongKokList];
+writematrix(arrayTotal)
+
+
+
 
 plot(yearS,CentralWesternList)
 title('Central Western Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,EasternList)
+title('Eastern Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+figure
+
+plot(yearS,KwunTongList)
+title('Kwun Tong Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,ShamShuiPoList)
+title('Sham Shui Po Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,KwaiChungList)
+title('Kwai Chung Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,TsuenWanList)
+title('Tseun Wan Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,YuenLongList)
+title('Yuen Long Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,TuenMunList)
+title('Tuen Mun Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,TungChungList)
+title('Tung Chung Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,TaiPoList)
+title('Tai Po Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,ShaTinNorthList)
+title('Sha Tin North Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,TapMunList)
+title('Tap Mun Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,CausewayBayList)
+title('Causeway Bay Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,CentralList)
+title('Central Air Quality')
+xlabel('Years')
+ylabel('Air Quality Health Index Value')
+
+figure
+
+plot(yearS,MongKokList)
+title('Mong Kok Air Quality')
 xlabel('Years')
 ylabel('Air Quality Health Index Value')
